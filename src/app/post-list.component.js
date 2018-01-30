@@ -20,14 +20,16 @@ var PostListComponent = (function () {
         this.postService.getAllPosts().subscribe(function (data) { return _this.posts = data; });
         console.log(posts);
     };
+    //+1 aangezien index vanaf 0 begint bij loop en 1 in opde site
     PostListComponent.prototype.getComments = function (index) {
         var _this = this;
-        this.postService.getCommentsForPost(index).subscribe(function (data) { return _this.printComments(data); });
+        this.postService.getCommentsForPost(index + 1).subscribe(function (data) { return _this.printComments(data); });
     };
     PostListComponent.prototype.printComments = function (comments) {
         for (var _i = 0, comments_1 = comments; _i < comments_1.length; _i++) {
             var entry = comments_1[_i];
             console.log(entry.name);
+            this.commentsFound.emit(entry.name);
         }
     };
     return PostListComponent;

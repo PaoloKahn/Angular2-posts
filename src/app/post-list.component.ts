@@ -22,14 +22,16 @@ export class PostListComponent  {
      console.log(posts)
    }
 
+   //+1 aangezien index vanaf 0 begint bij loop en 1 in opde site
    getComments(index: number): void {
-     this.postService. getCommentsForPost(index).subscribe(data => this.printComments(data));
+     this.postService. getCommentsForPost(index +1).subscribe(data => this.printComments(data));
    }
 
    printComments(comments: Comment[]): void {
 
      for (let entry of comments) {
-   console.log(entry.name);
+       console.log(entry.name);
+       this.commentsFound.emit(entry.name);
 }
    }
 }

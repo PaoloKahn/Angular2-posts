@@ -27,6 +27,7 @@ export class PostListComponent  {
      this.postService. getCommentsForPost(index +1).subscribe(data => this.printComments(data));
    }
 
+
    printComments(comments: Comment[]): void {
 
      for (let entry of comments) {

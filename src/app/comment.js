@@ -1,13 +1,9 @@
 "use strict";
 var Post = (function () {
-    function Post(name, description, price) {
+    function Post(name, body) {
         this.name = name;
-        this.description = description;
-        this.price = price;
+        this.body = body;
     }
-    Post.prototype.toForm = function () {
-        return "name=" + this.name + "&description=" + this.description + "&price=" + this.price;
-    };
     return Post;
 }());
 exports.Post = Post;

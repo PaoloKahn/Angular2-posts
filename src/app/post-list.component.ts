@@ -32,7 +32,7 @@ export class PostListComponent  {
 
      for (let entry of comments) {
        console.log(entry.name);
-       this.commentsFound.emit(entry.name);
+       //this.commentsFound.emit(entry.name);
 }
    }
 }

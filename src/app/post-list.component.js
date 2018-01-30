@@ -29,7 +29,6 @@ var PostListComponent = (function () {
         for (var _i = 0, comments_1 = comments; _i < comments_1.length; _i++) {
             var entry = comments_1[_i];
             console.log(entry.name);
-            this.commentsFound.emit(entry.name);
         }
     };
     return PostListComponent;
